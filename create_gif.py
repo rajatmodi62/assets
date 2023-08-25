@@ -3,10 +3,11 @@ import glob
 from pathlib import Path
 import cv2
 import os
-root = Path('/Users/rajatmodi/Downloads/2101')
+root = Path('/Users/rajatmodi/Downloads/2204')
 images = []
 filenames = glob.glob(str(root/'**/*.png'),recursive=True)
 filenames+=glob.glob(str(root/'**/*.jpg'),recursive=True)
+filenames+=glob.glob(str(root/'**/*.jpeg'),recursive=True)
 
 # filenames = [root/d for d in os.listdir(str(root))]
 for filename in filenames:
@@ -17,4 +18,4 @@ for filename in filenames:
         images.append(img)
     except:
         print("error")
-imageio.mimsave('movie.gif', images)
+imageio.mimsave('2204.gif', images,fps=1)
